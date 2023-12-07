@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 01:53:16 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/11/16 03:14:48 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/04 07:11:50 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	ft_bzero(void *dst, size_t n)
 {
-	unsigned char	*nulled;
+	char	*nulled;
+	size_t	i;
 
+	i = 0;
 	nulled = dst;
-	while (n--)
+	while (i < n)
 	{
-		*nulled++ = '\0';
+		nulled[i] = '\0';
+		i++;
 	}
 }

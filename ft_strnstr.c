@@ -1,6 +1,4 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
  
 char	*ft_strnstr(const char *string, const char *substring, size_t len)
 {

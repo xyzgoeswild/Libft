@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amuhsen- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:41:36 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/11/16 18:50:03 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/06 04:17:37 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*dest;
 	int		i;
 
-	if (!*s)
+	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	if (start + len > ft_strlen(s))
 		len = ft_strlen(s) - start;
 	i = 0;
-	dest = (char *) malloc(sizeof(char) * (len + 1));
+	dest = (char *)malloc(sizeof(char) * (len + 1));
 	if (!dest)
 		return (NULL);
 	while (i < len && s[start + i] != '\0')
@@ -39,7 +39,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 /*#include <stdio.h>
 
-int main()
+int	main(void)
 {
     char src[] = "Okay this is a test lol";
  
@@ -50,5 +50,5 @@ int main()
  
     printf("%s\n", dest);
  
-    return 0;
+    return (0);
 }*/

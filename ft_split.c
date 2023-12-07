@@ -1,110 +1,103 @@
 #include "libft.h"
 
-static int count_words(const char *s, char c)
+static char	**free_strings(char **strigns)
 {
-    size_t  i = 0;
-    size_t  wc = 0;
-    while (s[i])
-    {
-        if (s[i] == c)
-        {
-            i++;
-        }
-        if ((i = 0 || s[i - 1] == c) && s[i] != c)
-        {
-            wc++;
-        }
-        i++;
-    }
+	size_t	i;
+
+	i = 0;
+	while (strigns[i] != NULL)
+	{
+		free(strigns[i]);
+		i++;
+	}
+	free(strigns);
+	return (NULL);
 }
 
-char **ft_split(char const *s, char c)
+static size_t	count(char const *str, char c)
 {
+	size_t	i;
+	size_t	count;
+	int		torf;
 
+	i = 0;
+	count = 0;
+	torf = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			torf = 0;
+		if (torf == 0)
+		{
+			count++;
+			torf = 1;
+		}
+		i++;
+	}
+	return (count);
 }
 
-
-#include <stdlib.h>
-#include <stdio.h> // for debugging purposes
-
-static int count_words(const char *s, char c)
+static char	**magic(char **strings, char const *s, char c)
 {
-    int count = 0;
-    int in_word = 0;
+	size_t	i;
+	size_t	j;
+	size_t	start;
 
-    while (*s)
-    {
-        if (*s == c)
-        {
-            in_word = 0;
-        }
-        else if (in_word == 0)
-        {
-            in_word = 1;
-            count++;
-        }
-        s++;
-    }
-    return count;
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		while (s[i] == c && s[i])
+			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		if (start < i)
+		{
+			strings[j] = (char *)malloc((i - start + 1) * (sizeof(char)));
+			if (!strings[j])
+				return (NULL);
+			strings[j] = ft_memcpy(strings[j], s + start, i - start);
+			strings[j][i - start] = '\0';
+			j++;
+		}
+	}
+	return (strings);
 }
 
-static char *strndup(const char *s, size_t n) {
-    char *result = malloc(n + 1);
-    if (result) {
-        strncpy(result, s, n);
-        result[n] = '\0';
-    }
-    return result;
+char	**ft_split(char const *s, char c)
+{
+	char	**strings;
+	size_t	counted;
+
+	counted = count(s, c);
+	if (!s)
+		return (NULL);
+	if (s[0] == 0)
+	{
+		strings = (char **)malloc(1 * sizeof(char *));
+		if (!strings)
+			return (NULL);
+		strings[0] = NULL;
+		return (strings);
+	}
+	strings = (char **)malloc((counted + 1) * (sizeof(char *)));
+	if (!strings)
+		return (NULL);
+	if (magic(strings, s, c) == NULL)
+		return (free_strings(strings));
+	return (strings);
 }
 
-char **ft_split(char const *s, char c) {
-    int num_words = count_words(s, c);
-    char **result = malloc((num_words + 1) * sizeof(char *));  // +1 for the NULL pointer at the end
+#include <stdio.h>
 
-    if (result == NULL) {
-        return NULL;  // Allocation failure
-    }
-
-    int word_index = 0;
-    int in_word = 0;
-    const char *start = s;
-
-    while (*s) {
-        if (*s == c) {
-            if (in_word) {
-                result[word_index++] = strndup(start, s - start);
-                in_word = 0;
-            }
-        } else if (!in_word) {
-            start = s;
-            in_word = 1;
-        }
-        s++;
-    }
-
-    // If the last character is not a delimiter, we need to capture the last word
-    if (in_word) {
-        result[word_index++] = strndup(start, s - start);
-    }
-
-    // Null-terminate the array
-    result[word_index] = NULL;
-
-    return result;
-}
-
-int main() {
-    const char *input = "ali@@is@a@@G";
-    char **result = ft_split(input, '@');
-
-    if (result != NULL) {
-        for (int i = 0; result[i] != NULL; i++) {
-            printf("%s", result[i]);
-            free(result[i]);
-        }
-
-        free(result);
-    }
-
-    return 0;
+int    main(void)
+{
+    char **strs = ft_split("Ali is \0super cool", ' ');
+    for (int i = 0; i < 4; i++)
+	{
+       printf("%s\n", strs[i]);
+		free(strs[i]);
+	}
+	free(strs);
 }
