@@ -6,29 +6,36 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 07:18:53 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/06 04:16:53 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/08 04:45:37 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	dst_len;
-	size_t	src_len;
+	size_t	dest_len;
+	size_t	i;
 
-	src_len = ft_strlen(src);
-	if (dst == NULL && size == 0)
-		return (src_len);
-	dst_len = ft_strlen(dst);
-	while (*dst && size > 0 && size--)
+	i = 0;
+	dest_len = 0;
+	if (!dest && size == 0)
+		return (0);
+	while (dest_len < size && dest[dest_len])
+		dest_len++;
+	while (src[i])
 	{
-		dst++;
+		if (dest_len + i < size - 1)
+		{
+			dest[dest_len + i] = src[i];
+			i++;
+		}
+		else
+		{
+			dest[dest_len + i] = '\0';
+			return (dest_len + ft_strlen(src));
+		}
 	}
-	while (*src && size > 1 && size--)
-	{
-		*dst++ = *src++;
-	}
-	*dst = '\0';
-	return (src_len + dst_len);
+	dest[dest_len + i] = '\0';
+	return (dest_len + ft_strlen(src));
 }

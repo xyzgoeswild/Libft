@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/08 06:35:29 by amuhsen-          #+#    #+#             */
+/*   Updated: 2023/12/08 06:46:13 by amuhsen-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	white_space(char str)
@@ -29,22 +41,4 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (res * sign);
-}
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int	main(void)
-{
-	int		val;
-	char	str[30];
-
-	strcpy(str, "10");
-	val = ft_atoi(str);
-	printf("My value = %d\n", val);
-	strcpy(str, "10");
-	val = atoi(str);
-	printf("atoi value = %d\n", val);
-	return (0);
 }

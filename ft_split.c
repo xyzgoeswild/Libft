@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/08 06:35:59 by amuhsen-          #+#    #+#             */
+/*   Updated: 2023/12/08 06:36:06 by amuhsen-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static char	**free_strings(char **strigns)
@@ -87,17 +99,4 @@ char	**ft_split(char const *s, char c)
 	if (magic(strings, s, c) == NULL)
 		return (free_strings(strings));
 	return (strings);
-}
-
-#include <stdio.h>
-
-int    main(void)
-{
-    char **strs = ft_split("Ali is \0super cool", ' ');
-    for (int i = 0; i < 4; i++)
-	{
-       printf("%s\n", strs[i]);
-		free(strs[i]);
-	}
-	free(strs);
 }

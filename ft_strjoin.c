@@ -6,48 +6,35 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 20:17:11 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/11/20 18:01:26 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/08 06:36:24 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*final;
-	int		ss1;
-	int		ss2;
-	int		i;
+	char	*rizz;
+	size_t	length;
+	size_t	i;
+	size_t	j;
 
-	ss1 = ft_strlen(s1);
-	ss2 = ft_strlen(s2);
+	length = ft_strlen(s1) + ft_strlen(s2);
 	i = 0;
-	final = (char *) malloc(sizeof(char) * (ss1 + ss2) + 1);
-	if (final == NULL)
+	j = 0;
+	rizz = (char *)malloc(sizeof(char) * (length + 1));
+	if (!rizz)
 		return (NULL);
-	while (*s1)
+	while (s1[i])
 	{
-		final[i++] = *s1++;
+		rizz[i] = s1[i];
+		i++;
 	}
-	while (*s2)
+	while (s2[j])
 	{
-		final[i++] = *s2++;
+		rizz[i + j] = s2[j];
+		j++;
 	}
-	final[i] = '\0';
-	return (final);
+	rizz[i + j] = '\0';
+	return (rizz);
 }
-
-/*#include <stdio.h>
-
-int main()
-{
-	char	*s1 = "xyz, ";
-	char	*s2 = "is top G";
-	char	*res;
-
-	res = ft_strjoin(s1, s2);
-
-	printf("%s\n", res); // Expecting "xyz, is top G"
-	return (0);
-}*/

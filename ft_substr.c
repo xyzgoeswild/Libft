@@ -6,17 +6,16 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:41:36 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/06 04:17:37 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/08 06:37:00 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*dest;
-	int		i;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
@@ -36,19 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	dest[i] = '\0';
 	return (dest);
 }
-
-/*#include <stdio.h>
-
-int	main(void)
-{
-    char src[] = "Okay this is a test lol";
- 
-    int start = 20;
-    int len = 3;
- 
-    char* dest = ft_substr(src, start, len); // Expected "lol"
- 
-    printf("%s\n", dest);
- 
-    return (0);
-}*/

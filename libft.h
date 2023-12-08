@@ -6,16 +6,16 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 23:23:47 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/07 23:34:12 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/08 06:38:30 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdint.h>
 
 int		ft_toupper(int ch);
 int		ft_tolower(int ch);
@@ -29,7 +29,7 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
 int		ft_atoi(const char *str);
 
 size_t	ft_strlcpy(char *dst, char *src, size_t size);
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 void	ft_bzero(void *dst, size_t n);

@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 08:42:52 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/11/30 22:31:23 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/08 05:18:26 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strchr(const char *str, int c)
 		if (str[i] != c)
 			i++;
 		else
-			return ((char *)str + i);
+			return ((unsigned char *)str + i);
 	}
 	return (0);
 }

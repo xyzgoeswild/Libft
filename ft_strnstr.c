@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/08 06:36:38 by amuhsen-          #+#    #+#             */
+/*   Updated: 2023/12/08 06:39:22 by amuhsen-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
- 
+
 char	*ft_strnstr(const char *string, const char *substring, size_t len)
 {
 	unsigned long	i;
-	int		j;
+	int				j;
 
 	i = 0;
-	j = 0;	
+	j = 0;
 	if (*substring == 0)
-	    return ((char *)string);
-    	while (string[i])
-    	{	
+		return ((char *)string);
+	while (string[i])
+	{
 		j = 0;
 		while ((string[i] == substring[j]) && string[i] && i < len)
 		{
 			i++;
-			j++;	
+			j++;
 		}
 		if (!substring[j])
 			return ((char *)&string[i - j]);
@@ -23,21 +35,3 @@ char	*ft_strnstr(const char *string, const char *substring, size_t len)
 	}
 	return (NULL);
 }
-
-/*int main()
-{
-    // Example usage of strnstr
-    const char haystack[29] = "Hello, World This is a test.";
-    const char needle[6] = "World";
-    int len = 15;
-    
-    // Find the first occurrence of needle in haystack, searching up to the first 10 characters
-    char *result = ft_strnstr(haystack, needle, len);
-
-    if (result != NULL) {
-        printf("%s\n", result);
-    } else {
-        printf("%s not found in the first %d characters.\n", needle, len);
-    }
-    return 0;
-}*/

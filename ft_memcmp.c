@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 08:42:42 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/07 22:58:00 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/08 06:34:43 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (0);
 	return (str1[i] - str2[i]);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char str1[] = "aaaaaa";
-// 	char str2[] = "xxxxxx";
-
-// 	printf("%d \n", ft_memcmp(str1, str2, 0));
-// }
