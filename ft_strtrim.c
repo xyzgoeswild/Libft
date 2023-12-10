@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 06:36:47 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/10 07:44:49 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 10:11:54 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	s;
 	size_t	e;
-	char	*rtr;
+	char	*rtn;
 
 	if (!s1)
 		return (NULL);
@@ -40,10 +40,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	e = ft_strlen(s1);
 	while (check_set(&s1[s], set) == 1)
 		s++;
-	if (s == e)
+	if (s == ft_strlen(s1))
 		return (ft_strdup(""));
-	while (check_set(&s1[e], set) == 1)
+	while (check_set(&s1[e - 1], set) == 1)
 		e--;
-	rtr = (char *)ft_substr(s1, s, e - s);
-	return (rtr);
+	rtn = ft_substr(s1, s, e - s);
+	return (rtn);
 }
