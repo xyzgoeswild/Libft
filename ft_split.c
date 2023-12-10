@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 06:35:59 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/10 11:02:51 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 11:29:50 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,19 @@ static size_t	count(char const *str, char c)
 	return (count);
 }
 
+static void	ft_initilize_vars(size_t *i, size_t *j)
+{
+	*i = 0;
+	*j = 0;
+}
+
 static char	**magic(char **strings, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
 	size_t	start;
 
-	i = 0;
-	j = 0;
+	ft_initilize_vars(&i, &j);
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
@@ -64,16 +69,16 @@ static char	**magic(char **strings, char const *s, char c)
 			i++;
 		if (start < i)
 		{
-			strings[j] = (char *)malloc((i - start + 1) * (sizeof(char)));
+			strings[j] = (char *)ft_calloc((i - start + 1), (sizeof(char)));
 			if (!strings[j])
 				return (NULL);
 			strings[j] = ft_memmove(strings[j], s + start, i - start);
 			if (!strings[j])
 				return (NULL);
-			strings[j][i - start] = '\0';
 			j++;
 		}
 	}
+	strings[j] = NULL;
 	return (strings);
 }
 
