@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 10:47:50 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/10 11:04:36 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 11:58:34 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    size_t  i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

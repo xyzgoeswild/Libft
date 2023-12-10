@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 10:55:06 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/10 11:01:57 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 12:01:30 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!s || fd < 0)

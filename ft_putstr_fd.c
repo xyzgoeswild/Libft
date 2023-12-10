@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 10:52:44 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/10 11:01:52 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 11:58:19 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!s || fd < 0)

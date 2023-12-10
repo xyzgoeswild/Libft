@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 23:23:47 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/10 10:57:35 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 11:56:37 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 void	ft_bzero(void *dst, size_t n);
-void	*ft_calloc(size_t n, size_t size);
 void	*ft_calloc(size_t n, size_t size);
 void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
