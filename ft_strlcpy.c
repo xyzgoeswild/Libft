@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 00:57:57 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/08 04:54:25 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 07:17:52 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 	i = 0;
 	src_len = ft_strlen(src);
 	if (size == 0)
-		return (0);
+		return (src_len);
 	while (src[i] && i < size - 1)
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return (ft_strlen(src));
+	return (src_len);
 }

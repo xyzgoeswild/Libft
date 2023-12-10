@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 06:35:29 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/08 06:46:13 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 07:03:47 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	while (white_space(str[i]))
 		i++;
-	if ((str[i] == '-' || str[i] == '+') && (str[i + 1] >= '0' && str[i
-			+ 1] <= '9'))
+	if ((str[i] == '-' || str[i] == '+')
+		&& (str[i + 1] >= '0' && str[i + 1] <= '9'))
 	{
 		if (str[i] == '-')
 			sign = -1;

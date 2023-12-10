@@ -19,9 +19,9 @@ int	count(int num)
 
 char	*ft_itoa(int n)
 {
-	unsigned int num;
-	unsigned int len;
-	char *res;
+	unsigned int	num;
+	unsigned int	len;
+	char			*res;
 
 	num = n;
 	len = count(n);

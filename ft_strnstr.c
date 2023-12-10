@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 06:36:38 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/08 06:39:22 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 07:19:26 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *string, const char *substring, size_t len)
 
 	i = 0;
 	j = 0;
+	if (!string && len == 0)
+		return (NULL);
 	if (*substring == 0)
 		return ((char *)string);
 	while (string[i])

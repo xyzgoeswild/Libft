@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 01:58:19 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/08 06:39:42 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 07:09:12 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (dest == src)
+		return (dest);
 	if (!dest && !src)
 		return (NULL);
 	i = 0;

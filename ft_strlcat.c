@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 07:18:53 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/08 04:45:37 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 07:16:09 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		return (0);
 	while (dest_len < size && dest[dest_len])
 		dest_len++;
+	if (dest_len >= size)
+		return (ft_strlen(src) + size);
 	while (src[i])
 	{
 		if (dest_len + i < size - 1)
