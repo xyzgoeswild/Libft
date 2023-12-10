@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 06:35:50 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/10 07:10:01 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 07:35:52 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char		*ndest;
 	const unsigned char	*nsrc;
 
-	if (!dest && !src)
-		return (NULL);
 	i = 0;
 	ndest = (unsigned char *)dest;
 	nsrc = (unsigned char *)src;

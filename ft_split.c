@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 06:35:59 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/08 06:36:06 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 07:33:13 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ static char	**magic(char **strings, char const *s, char c)
 			if (!strings[j])
 				return (NULL);
 			strings[j] = ft_memcpy(strings[j], s + start, i - start);
+			if (!strings[j])
+				return (NULL);
 			strings[j][i - start] = '\0';
 			j++;
 		}
