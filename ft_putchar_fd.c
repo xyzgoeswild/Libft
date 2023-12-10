@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 10:50:55 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/10 11:01:59 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 11:53:46 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (!c || fd < 0)
+	if (fd < 0)
 		return ;
 	write(fd, &c, 1);
 }
