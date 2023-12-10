@@ -6,7 +6,7 @@
 /*   By: amuhsen- <borgiba85@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 06:35:50 by amuhsen-          #+#    #+#             */
-/*   Updated: 2023/12/10 07:35:52 by amuhsen-         ###   ########.fr       */
+/*   Updated: 2023/12/10 07:40:44 by amuhsen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	nsrc = (unsigned char *)src;
 	if (dest == src)
 		return (dest);
-	if (ndest > nsrc && nsrc + 1 > ndest)
+	if (nsrc < ndest && nsrc + n > ndest)
 	{
 		i = n;
 		while (i > 0)
